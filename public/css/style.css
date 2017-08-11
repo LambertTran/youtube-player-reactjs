@@ -4,6 +4,7 @@ body{
 }
 
 .search-bar{
+  color:black;
   margin:20px;
   text-align: center;
 }
@@ -19,8 +20,10 @@ body{
 .video-detail .detail {
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+}
+
+.detail{
+  text-align: center;
 }
 
 .list-group-item{
@@ -29,5 +32,6 @@ body{
 }
 
 .list-group-item:hover{
-  background-color: green;
+  background-color: #2F4F4F;
 }
+
