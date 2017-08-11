@@ -1,29 +1,31 @@
 import React, {Component} from 'react';
 
-
-//class base component
 class SearchBar extends Component{
 
-	constructor(props){
-		super(props);
-		this.state = {term: ''};
-	}
+  constructor(props){
+    super(props);
+    this.state = {term: ''};
+    this.handleChange=this.handleChange.bind(this);
+  }
 
-	render(){
-		return (
-			<div className="search-bar">	
-				<input
-					value= {this.state.term} 
-					onChange={(event) => this.onInputChange(event.target.value)} />
-			</div>
-		);
-	}
+  // search term when user inputted
+  handleChange(event){
+    this.setState({term:event.target.value});
+    // call function from parent component to search for list of video
+    this.props.onSearch(this.state.term); 
+  }
 
-	onInputChange(term){
-		this.setState({term});
-		this.props.onSearchTermChange(term);
-	}
 
+  render(){
+    return (
+      <div className="search-bar">  
+        <input
+          value= {this.state.term} 
+          onChange={this.handleChange} 
+          type="text"/>
+      </div>
+    );
+  }
 }
 
 export default SearchBar;
